@@ -1,1 +1,1647 @@
-/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Blender_Pro_Medium';
+    src: url(assets/fonts/Blender_Pro_Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Blender_Pro_Medium_Italic';
+    src: url(assets/fonts/Blender_Pro_Medium_Italic.ttf);
+}
+
+@font-face {
+    font-family: 'museo_sans_cyrl900';
+    src: url(assets/fonts/MuseoSansCyrl_4.otf);
+}
+
+@font-face {
+    font-family: 'museo_sans_cyrl700';
+    src: url(assets/fonts/MuseoSansCyrl_3.otf);
+}
+
+@font-face {
+    font-family: 'museo_sans_cyrl500';
+    src: url(assets/fonts/MuseoSansCyrl_2.otf);
+}
+
+@font-face {
+    font-family: 'museo_sans_cyrl300';
+    src: url(assets/fonts/MuseoSansCyrl_0.otf);
+}
+
+@font-face {
+    font-family: 'Blender_Pro_Heavy';
+    src: url(assets/fonts/Blender_Pro_Heavy.ttf);
+}
+
+@font-face {
+    font-family: 'Blender_Pro_Bold';
+    src: url(assets/fonts/Blender_Pro_Bold.ttf);
+}
+
+
+@font-face {
+    font-family: 'Blender_Pro_Book';
+    src: url(assets/fonts/Blender_Pro_Book.ttf);
+}
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.wrapper{
+    width: 100%;
+    /*max-width: 1680px;*/
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+
+/* header */
+
+.header-fixed{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    background: #f5f5f5;
+    min-height: 63px;
+}
+
+.header-menu-parent{
+    float: left;
+    width: 100%;
+    max-width: 1090px;
+    padding-top: 20px;
+}
+
+.header-menu {
+    list-style: none;
+    width: 100%;
+    max-width: 595px;
+    margin: 0 auto;
+    float: right;
+}
+
+.header-menu li{
+    font-size: 16px;
+    margin-right: 30px;
+    text-transform: uppercase;
+    font-family: Blender_Pro_Heavy;
+}
+
+.header-menu li a{
+    color: #303d4e;
+    text-decoration: none;
+    padding: 0;
+}
+
+.navbar-toggle{
+    border: 1px solid black;
+}
+
+.navbar-toggle .icon-bar{
+    background: black;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background: none;
+}
+
+.language-div{
+    display: none;
+    position: absolute;
+    left: -71px;
+    top: 16px;
+}
+
+.language-div li{
+    float: left;
+    margin-left: 10px;
+}
+
+.navbar-right{
+    position: relative;
+    float: left;
+}
+
+.navbar-left{
+    float: right !important;
+    list-style: none;
+    margin: 15px 0px 15px 10px;
+}
+
+.navbar-left li{
+    margin-right: 10px;
+    float: left;
+}
+
+.header-menu-right-blog{
+    float: right;
+}
+
+
+@media screen and (max-width: 680px)  {
+    .header-menu-parent{
+        max-width: 740px;
+    }
+    .header-slider .header-slider-text {
+        top: 20% !important;
+    }
+    .header-slider .header-slider-text h1 {
+        font-size: 40px !important;
+    }
+    .header-slider-text h4 {
+        font-size: 14px !important;
+        margin-bottom: 21px !important;
+     }
+    .header-slider-text p {
+        font-size: 12px !important;
+    }
+}
+
+
+.logo{
+    margin: 0;
+    margin-top: 8px;
+    font-family: museo_sans_cyrl900;
+}
+
+.logo a{
+    font-size: 32px;
+
+}
+
+.logo .logo_mav{
+    color: #394759;
+
+}
+
+.logo .logo_ent{
+    color: #ea212d;
+}
+
+
+/* header slider */
+
+/*.header-slider{*/
+    /*!*background: url('assets/images/dark.jpg');*!*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    /*height: 100%;*/
+    /*min-height: 835px;*/
+    /*background-repeat: no-repeat;*/
+    /*position: relative;*/
+/*}*/
+
+
+.slider-container{
+    padding: 0;
+}
+
+.slider_images img{
+    width: 100%;
+}
+
+.carousel-indicators .active {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    background-color: #ea212d;
+    border: none;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    /* background-color: #000\9; */
+    background-color: rgba(0,0,0,0);
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.header-slider .header-slider-text{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    bottom: 50%;
+    width: 50%;
+    margin: auto;
+    height: 50%;
+    z-index: 999;
+}
+
+.header-slider{
+    position: relative;
+}
+
+.header-slider .header-slider-text h1{
+    font-size: 140px;
+    font-family: Blender_Pro_Heavy;
+}
+
+.header-slider-text .slider_mav{
+    color: #ffffff;
+}
+.header-slider-text .slider_ent{
+    color: #ea212d;
+}
+
+.header-slider-text h4{
+    font-size: 48px;
+    color: #ffffff;
+    margin-top: 13px;
+    margin-bottom: 53px;
+    font-family: Blender_Pro_Medium;
+    text-transform: uppercase;
+}
+
+.header-slider-text p{
+    font-size: 30px;
+    color: #ffffff;
+    font-family: Blender_Pro_Medium;
+}
+
+.slider_next_prev{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+}
+
+.slider_images{
+    /*max-height: 800px;*/
+}
+
+.slider_images_active{
+
+}
+
+.slider-margin{
+    margin-top: 64px;
+}
+
+
+/* OUR PRODUCT */
+
+.our-product{
+
+}
+
+.our-name{
+    text-align: center;
+    margin-top: 130px;
+}
+
+.our-name img{
+
+}
+
+.our-name h2{
+    font-size: 52px;
+    font-family: Blender_Pro_Medium;
+    margin: 40px 0px 90px 0px;
+    color: #4b586b;
+}
+
+
+/*  ****  */
+
+.facade-name {
+    text-align: center;
+}
+
+.facade-name h4{
+    font-family: Blender_Pro_Bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 12px 15px;
+    border: 1px solid #4b586b;
+    background: white;
+}
+
+.hr_border{
+    border-color: #4b586b;
+    margin: -21px 0px 0px 0px;
+}
+
+
+/*  *** */
+
+.our-text{
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.our-text p{
+    font-size: 20px;
+    font-family: Blender_Pro_Medium;
+    display: inline-block;
+    max-width: 650px;
+    color: #656f85;
+}
+
+/* **********   */
+
+.product {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.item-product2{
+    margin-bottom: 80px;
+}
+
+.item-product{
+    max-width: 300px;
+    padding: 0;
+    margin: 0px auto;
+    position: relative;
+}
+
+.product-text{
+    font-family: museo_sans_cyrl300;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-text p{
+    color: #576375;
+}
+
+.product-title{
+    font-family: Blender_Pro_Medium;
+    font-size: 30px;
+    text-align: center;
+}
+
+.product-title h1 a{
+    color: #303d4e;
+    text-decoration: none;
+}
+
+.thumbnail{
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 0 !important;
+    padding: 0;
+}
+
+.hide-hover-images{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(193, 42, 51, 0.24);
+}
+
+.hide-hover-images img{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.product_hot{
+    position: absolute;
+    right: 0;
+    bottom: 13px;
+    background: url('assets/images/product-no-backg.png');
+    font-size: 16px;
+    font-family: Blender_Pro_Bold;
+    color: #ffffff;
+    padding: 2px 14px 0px 19px;
+    height: 30px;
+    width: 60px;
+    background-repeat: no-repeat;
+}
+
+.product_new{
+    position: absolute;
+    right: 0;
+    bottom: 13px;
+    background: url('assets/images/product-new-backg.png');
+    font-size: 16px;
+    font-family: Blender_Pro_Bold;
+    color: #ffffff;
+    padding: 2px 14px 0px 19px;
+    height: 30px;
+    width: 60px;
+    background-repeat: no-repeat;
+}
+
+
+.read_more{
+
+}
+
+.read_more .thumbnail img{
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+    max-height: 278px;
+}
+
+.read_more .thumbnail a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #4b586b;
+}
+
+.read_more .thumbnail a span{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 24px;
+    font-family: Blender_Pro_Bold;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+}
+
+
+/* SYSTEMS */
+
+.systems{
+    background: url('assets/images/system-bacg.png');
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.systems-information{
+    text-align: center;
+}
+
+.systems-information h1{
+    font-size: 36px;
+    font-family: Blender_Pro_Bold;
+    margin: 100px 0px 60px 0px;
+    color: white;
+}
+
+.systems-information p{
+    font-size: 16px;
+    font-family: museo_sans_cyrl300;
+    display: inline-block;
+    max-width: 1060px;
+    color: white;
+    line-height: 22px;
+}
+
+.systems-center-text{
+    margin: 30px 0px 60px 0px;
+}
+
+
+/* OUR OBJECT */
+
+.object{
+    padding: 70px 0;
+}
+
+.our-object h2{
+    font-size: 52px;
+    font-family: Blender_Pro_Medium;
+    margin: 50px 0px 60px 0px;
+    color: #4b586b;
+}
+
+.our-object-text {
+    text-align: center;
+}
+
+.our-object-text p{
+    max-width: 760px;
+    display: inline-block;
+    text-align: center;
+    font-family: Blender_Pro_Medium;
+    color: #656f85;
+    font-size: 24px;
+}
+
+
+/*  ******  */
+
+.our-information{
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.our-information-blog{
+    margin-bottom: 50px;
+}
+
+.our-information-content{
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.our-information-blog h3{
+    color: #303d4e;
+    font-size: 30px;
+    font-family: Blender_Pro_Medium;
+}
+
+.our-information-blog hr{
+    /*color: #303d4e;*/
+    border-top: 2px solid #303d4e;
+}
+
+.our-information-blog p{
+    font-size: 12px;
+    font-family: museo_sans_cyrl300;
+    color: #4b586b;
+    line-height: 18px;
+}
+
+
+
+/* our slider */
+
+#myCarousel2{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.prev-img{
+    left: 26% !important;
+    position: absolute;
+    top: 50% !important;
+    z-index: 5;
+    display: inline-block;
+    width: auto !important;
+    height: auto !important;
+}
+
+.next_a{
+    background-image: none !important;
+}
+
+.next-img{
+    left: 59% !important;
+    position: absolute;
+    top: 50% !important;
+    z-index: 5;
+    display: inline-block;
+    width: auto !important;
+    height: auto !important;
+}
+
+.carousel-inner2{
+    max-width: 903px;
+    margin: 0 auto;
+}
+
+
+
+/* our-slide-bottom-element */
+
+.our-slide-bottom-element{
+    max-width: 945px;
+    margin: 35px auto 0 auto;
+}
+
+.our-slide-bottom-element h4{
+    font-size: 14px;
+    font-family: museo_sans_cyrl300;
+    color: #656f85;
+    margin-bottom: 20px;
+}
+
+.our-slide-bottom-element p{
+    font-size: 18px;
+    font-family: Blender_Pro_Medium;
+    color: #303d4e;
+}
+
+.our-slide-bottom-content{
+    max-width: 300px;
+    padding: 0;
+    margin: 0px auto;
+}
+
+.our-slide-bottom-blog{
+    margin-bottom: 40px;
+}
+
+.our-slide-bottom-last{
+    padding-left: 35px;
+}
+
+
+/*@media screen and (max-width: 768px)  {*/
+    /*.our-slide-bottom-last{*/
+        /*padding-left: 0;*/
+    /*}*/
+/*}*/
+
+
+/* CONTACT */
+
+#success_message{ display: none;}
+
+.contact{
+    background: url('assets/images/contact-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-information {
+    padding: 60px 0px;
+}
+
+.contact-information h1{
+    font-size: 48px;
+    font-family: Blender_Pro_Medium;
+    letter-spacing: 3px;
+    color: white;
+    text-align: center;
+}
+
+.contact-information p{
+    text-align: center;
+    font-family: Blender_Pro_Medium;
+    font-size: 18px;
+    color: white;
+    margin: 27px 0px 40px 0px;
+}
+
+#contact_form{
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.form-group{
+    margin-bottom: 30px;
+}
+
+.input-group{
+    height: 47px;
+}
+
+.input-group-addon:first-child {
+    border-right: 0;
+    border-radius: 6px 0px 0px 6px !important;
+    padding: 10px 14px 8px 14px;
+    background: white;
+    border-color: #4b586b;
+}
+
+.form-control{
+    height: 47px;
+    border-color: #4b586b;
+    font-family: Blender_Pro_Book;
+    font-size: 16px;
+}
+
+.phone-images img{
+    padding: 0px 2.3px;
+}
+
+.name-images img{
+    padding: 0px 4px;
+}
+
+.contact-padding{
+    padding: 0;
+}
+
+.input-group-textarea{
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+}
+
+.input-group-textarea textarea{
+    height: 150px;
+    border-radius: 6px !important;
+    font-family: Blender_Pro_Book;
+    font-size: 16px;
+    padding: 10px 16px;
+}
+
+.my-custom-submit{
+    width: 100%;
+    background: #77a72a;
+    color: white;
+    font-size: 16px;
+    font-family: Blender_Pro_Bold;
+    height: 50px;
+    outline: none;
+}
+.my-custom-submit:hover{
+    color: white;
+}
+
+
+/* contact information text */
+
+.contact-data-parent{
+    padding: 90px 0px;
+}
+
+.contact-data{
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.contact-data h1{
+    font-family: Blender_Pro_Medium;
+    font-size: 52px;
+    color: #4b586b;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.contact-data-text-content h4{
+    font-family: museo_sans_cyrl500;
+    font-size: 18px;
+    color: #656f85;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-data-text-content p{
+    font-family: museo_sans_cyrl300;
+    font-size: 16px;
+    color: #656f85;
+    text-align: center;
+    line-height: 22px;
+}
+
+
+ /* map */
+
+.map_iframe{
+    padding: 0;
+}
+.map_iframe iframe{
+    height: 500px;
+}
+
+
+/* brand */
+
+.brand{
+    padding-top: 85px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.brand-images{
+    margin-bottom: 20px;
+}
+
+.brand-images img{
+    width: 100%;
+    max-width: 140px;
+}
+
+
+/* NEWS */
+
+.news{
+    padding: 80px 0 0 0;
+}
+
+.news-content{
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.news h1{
+    font-family: Blender_Pro_Medium;
+    font-size: 52px;
+    color: #4b586b;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.news-post .thumbnail img{
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+    max-height: 278px;
+}
+
+.news-post .thumbnail {
+    margin:0;
+}
+
+.news-post .thumbnail a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.news-post .thumbnail a span{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 16px;
+    font-family: museo_sans_cyrl500;
+    text-align: center;
+    width: 100%;
+    max-width: 275px;
+}
+
+.hide-hover-images-product{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(193, 42, 51, 0.24);
+}
+
+.hide-hover-images-product img{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    max-width: 150px;
+}
+
+.news-post .thumbnail .hide-hover-images-product img{
+    height: 100%;
+    width: 100%;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.read_more .thumbnail .hide-hover-images-product img{
+    height: 100%;
+    width: 100%;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+
+/* FOOTER */
+
+.footer{
+    background: url('assets/images/footer_bg.png');
+    padding: 70px 0px;
+    background-repeat: no-repeat;
+    height: 219px;
+    background-size: cover;
+}
+
+.footer-text {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.footer-text p{
+    text-align: center;
+    font-family: museo_sans_cyrl300;
+    color: white;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.footer_logo{
+    margin: 0;
+    margin-top: 8px;
+    font-family: museo_sans_cyrl900;
+    text-align: center;
+    font-size: 32px;
+}
+
+.footer_logo .logo_mav{
+    color: #394759;
+
+}
+
+.footer_logo .logo_ent{
+    color: #ea212d;
+}
+
+.footer-social {
+    display: none;
+    margin-top: 9px;
+    letter-spacing: 12px;
+}
+
+.footer-social li{
+    display: inline-block;
+    list-style: none;
+}
+
+.help-block{
+    display: none !important;
+}
+
+.glyphicon {
+    /*display: none !important;*/
+}
+
+.glyphicon-remove{
+    /*display: none !important;*/
+}
+
+.glyphicon-remove{
+    margin-top: 8px;
+    /*padding-top: 8px;*/
+    /*background: url('/images/error-icon.png');*/
+    /*background-repeat: no-repeat;*/
+    /*top: 13px;*/
+}
+
+
+
+/* SINGLE PROSUCT */
+
+.single{
+    padding-top: 63px;
+
+}
+
+.single-product{
+    padding-top: 63px;
+    margin-bottom: 100px;
+    max-width: 1300px;
+    margin: 0px auto 100px auto;
+}
+
+.single-product-images{
+    max-font-size: 500px;
+}
+
+.single-product-content{
+    max-font-size: 500px;
+}
+
+.single-slider{
+    border: 1px solid #cccccc;
+    max-width: 430px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+#myCarousel3 .carousel-indicators li {
+    border: 2px solid #ea212d;
+    border-radius: 10px;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#myCarousel3 .carousel-indicators .active {
+    border:none;
+    width: 21px;
+    height: 21px;
+}
+
+#myCarousel3 .carousel-indicators{
+    bottom: -55px;
+}
+
+.carousel-indicators-single .active {
+    width: 21px;
+    height: 21px;
+    margin: 0;
+    background-color: #ea212d;
+    border: none;
+}
+
+.carousel-indicators-single li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    /* background-color: #000\9; */
+    background-color: rgba(0,0,0,0);
+    border: 2px solid #cc0000;
+    border-radius: 10px;
+}
+
+.carousel-indicators-single {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+    bottom: -43px;
+}
+
+.product_new_single{
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    background: url('assets/images/product-new-backg.png');
+    font-size: 16px;
+    font-family: Blender_Pro_Bold;
+    color: #ffffff;
+    padding: 4px 14px 0px 19px;
+    height: 30px;
+    width: 60px;
+    background-repeat: no-repeat;
+}
+
+
+
+/* ssingle-content */
+
+.single-content{
+
+}
+
+.single-header{
+    padding: 0;
+}
+
+.single-content .single-header span{
+    font-family: Blender_Pro_Book;
+    font-size: 14px;
+    color: #9cbf3e;
+}
+
+.single-content .single-header h1{
+    font-family: museo_sans_cyrl700;
+    font-size: 30px;
+    color: #303d4e;
+    margin: 15px 0;
+}
+
+.single-content .single-header p{
+    font-family: museo_sans_cyrl500;
+    font-size: 14px;
+    color: #888888;
+}
+
+.single-header-content{
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 50px;
+}
+
+.single-description{
+    
+}
+
+.single-description h3{
+    font-family: museo_sans_cyrl700;
+    font-size: 18px;
+    color: #656f85;
+    margin-bottom: 23px;
+}
+
+.single-description p{
+    font-family: museo_sans_cyrl500;
+    font-size: 14px;
+    color: #656f85;
+    margin-bottom: 23px;
+}
+
+.single-text strong{
+    float: left;
+    margin-right: 5px;
+}
+
+.single-text span{
+    float: left;
+    max-width: 665px;
+}
+
+.single-bottom-text{
+    margin-top: 50px;
+}
+
+.single-bottom-text h3{
+    font-family: museo_sans_cyrl700;
+    font-size: 18px;
+    color: #656f85;
+    margin-bottom: 23px;
+}
+
+.single-bottom-text p{
+    font-family: museo_sans_cyrl500;
+    font-size: 14px;
+    color: #656f85;
+    line-height: 19px;
+}
+
+.single-bottom-text button{
+    background: #269ac9;
+    border: none;
+    border-radius: 2px;
+    padding: 17px 35px 17px 18px;
+    color: white;
+    font-size: 16px;
+    font-family: Blender_Pro_Bold;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.single-bottom-text button:hover{
+    background: #2c8bb1;
+}
+
+.single-bottom-text button img{
+    margin-right: 18px;
+}
+
+
+
+/* SOCIAL ICON */
+
+ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left:0 !important;
+    padding: 0;
+}
+
+ul.social-network li {
+    display: inline;
+}
+
+
+/* footer social icons */
+
+.social-network a.icoRss:hover {
+    background-color: #fe0000;
+
+}
+.social-network a.icoFacebook:hover {
+    background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+    background-color:#33ccff;
+}
+.social-network a.icoGoogle:hover {
+    background-color:#BD3518;
+}
+.social-network a.icoVimeo:hover {
+    background-color:#0590B8;
+}
+.social-network a.icoLinkedin:hover {
+    background-color:#007bb7;
+}
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+    color:#fff;
+}
+
+.social-circle li a {
+    display:inline-block;
+    position:relative;
+    margin:0 auto 5px auto;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    border-radius:50%;
+    text-align:center;
+    width: 50px;
+    height: 50px;
+    font-size:20px;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.social-circle i {
+    color: #fff;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+.social-network a{
+    background: #cccccc;
+    width: 27px !important;
+    height: 27px !important;
+}
+
+.social-circle li i {
+    margin: 0;
+    line-height: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.container-social{
+    max-width: 840px;
+}
+
+
+
+/* our-product-all  */
+
+.our-product-all{
+
+}
+
+.our-name-all{
+    text-align: center;
+    margin-top: 130px;
+}
+
+.our-name-all h2{
+    font-size: 52px;
+    font-family: Blender_Pro_Medium;
+    margin: 40px 0px 90px 0px;
+    color: #4b586b;
+}
+
+.our-name-all h2{
+    font-size: 52px;
+    font-family: Blender_Pro_Medium;
+    margin: 40px 0px 50px 0px;
+    color: #4b586b;
+}
+
+.our-text-all{
+    margin-top: 0px;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.our-text-all p{
+    font-size: 20px;
+    font-family: Blender_Pro_Medium;
+    display: inline-block;
+    max-width: 750px;
+    color: #656f85;
+}
+
+
+/* NEWS ALL */
+
+.single-news-all{
+    padding-top: 60px
+}
+
+.news-all{
+    padding: 100px 0 0 0;
+}
+
+.news-all h1{
+    font-family: Blender_Pro_Medium;
+    font-size: 52px;
+    color: #4b586b;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.news-all .news-all-title-desc{
+    font-family: Blender_Pro_Medium;
+    font-size: 24px;
+    color: #4b586b;
+    text-align: center;
+    max-width: 666px;
+    width: 100%;
+    margin: 0px auto 100px auto;
+}
+
+
+/* NEWS PAGE */
+
+.news-page-img img{
+    width: 100%;
+}
+
+.page-content{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px 10px 20px;
+}
+
+.page-content-name{
+    margin-bottom: 45px;
+}
+
+.page-content-name h1{
+    margin-top: 30px;
+    font-family: museo_sans_cyrl700;
+    color: #303d4e;
+    font-size: 24px;
+}
+
+.news-page-text {
+    padding-bottom: 70px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.news-page-text p{
+    font-family: museo_sans_cyrl300;
+    color: #656f85;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+
+/* OBJECT PAGE */
+
+.object-page{
+    padding-top: 100px;
+}
+
+.object-page-social{
+    max-width: 900px;
+    margin: 30px auto 30px auto;
+}
+
+.object-page-social .social-network{
+    float: right;
+}
+
+.object-bottom{
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 24px;
+    font-family: museo_sans_cyrl500;
+    text-align: center;
+    width: 100%;
+    max-width: 275px;
+    color: #ea212d
+}
+
+.object-all .object-all-title-desc {
+    font-family: Blender_Pro_Medium;
+    font-size: 24px;
+    color: #4b586b;
+    text-align: center;
+    max-width: 777px;
+    width: 100%;
+    margin: 0px auto 100px auto;
+}
+
+.object-all{
+    padding: 80px 0 0 0;
+}
+
+.object-content{
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.object-all h1{
+    font-family: Blender_Pro_Medium;
+    font-size: 52px;
+    color: #4b586b;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 55px;
+}
+
+
+@media screen and (max-width: 1445px)  {
+    .header-menu-parent{
+        max-width: 880px;
+    }
+
+}
+
+
+@media screen and (max-width: 1235px)  {
+    .header-menu-parent{
+        max-width: 740px;
+    }
+}
+
+
+@media screen and (max-width: 1270px)  {
+    .header-slider .header-slider-text h1 {
+        font-size: 115px;
+
+    }
+    .header-slider .header-slider-text {
+        top: 35%;
+    }
+    .header-slider-text h4 {
+        font-size: 40px;
+    }
+    .header-slider-text p {
+        font-size: 23px;
+
+    }
+}
+
+
+@media screen and (max-width: 1100px)  {
+    .header-menu-parent {
+        max-width: 635px;
+    }
+}
+
+
+@media screen and (max-width: 990px)  {
+    .header-menu-parent {
+        max-width: 550px;
+    }
+    .logo a {
+        font-size: 25px;
+    }
+    .header-menu li {
+        font-size: 15px;
+        margin-right: 15px;
+    }
+}
+
+
+@media screen and (max-width: 956px)  {
+    .header-slider-text h4 {
+        font-size: 27px;
+        margin-bottom: 18px;
+    }
+
+    .header-slider .header-slider-text h1 {
+        font-size: 80px;
+    }
+}
+
+
+@media screen and (max-width: 881px)  {
+
+    .header-menu-parent {
+        max-width: 490px;
+    }
+
+    .header-menu li {
+        font-size: 14px;
+        margin-right: 12px;
+    }
+    .header-menu-right-blog .navbar-left li a img{
+        width: 22px;
+    }
+    .language-div li a img{
+        width: 22px;
+    }
+    .language a img{
+    width: 22px;
+    }
+    .language-div {
+        left: -56px;
+    }
+}
+
+
+@media screen and (max-width: 797px)  {
+    .header-menu-parent {
+        max-width: 459px;
+    }
+}
+
+
+@media screen and (max-width: 768px)  {
+
+    .navbar-left {
+        display: none;
+    }
+
+    .header-menu li {
+        float: left;
+    }
+
+    .language-div {
+        top: 10px;
+    }
+
+    .header-slider-text p {
+        font-size: 17px;
+    }
+
+    .header-slider .header-slider-text h1 {
+        font-size: 60px;
+    }
+
+    .header-slider-text h4 {
+        font-size: 22px;
+    }
+
+    .header-slider-text p {
+        font-size: 14px;
+    }
+
+    .next-img {
+        width: 25px !important;
+    }
+
+    .prev-img {
+        width: 25px !important;
+    }
+}
+
+
+@media screen and (max-width: 680px)  {
+    .header-slider .header-slider-text {
+        top: 54% !important;
+    }
+}
+
+@media screen and (max-width: 410px)  {
+    .header-slider .header-slider-text h1 {
+        font-size: 23px !important;
+    }
+    .header-slider-text h4 {
+        font-size: 9px !important;
+        margin-bottom: 7px !important;
+    }
+    .header-slider-text p {
+        font-size: 6px !important;
+    }
+
+    .next-img {
+        left: 42% !important;
+        width: 19px !important;
+    }
+
+    .prev-img {
+        left: 33% !important;
+        width: 19px !important;
+    }
+    .contact-padding{
+        padding: 0px 15px;
+    }
+
+}
+
+
+@media screen and (max-width: 535px)  {
+    .header-menu li {
+        float: none;
+    }
+    .header-menu-parent {
+        max-width: 141px;
+        line-height: 31px;
+    }
+    .slider-container {
+        padding: 12px;
+    }
+}
+
