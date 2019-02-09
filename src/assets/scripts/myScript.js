@@ -12,11 +12,11 @@ $(document).ready(function(){
     }));
 
 
-    $("body").on('mouseover','.navbar-right',(function(){
+    $("body").on('mouseover','.navbar-left',(function(){
         $(".language-div").show();
     }));
 
-    $("body").on('mouseout','.navbar-right',(function(){
+    $("body").on('mouseout','.navbar-left',(function(){
         $(".language-div").hide();
     }));
 

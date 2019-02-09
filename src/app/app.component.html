@@ -1,21 +1,61 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="wrapper">
+    <div class="header">
+        <header class="header-fixed">
+            <nav>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h2 class="logo clearfix">
+                            <a class="navbar-brand" href="index.html"><span class="logo_mav">MAV</span><span class="logo_ent">ENT</span></a>
+                        </h2>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                       <div class="header-menu-parent clearfix">
+                            <ul class="header-menu navbar-nav clearfix">
+                                <li class="our-product-menu"><a href="#/наша продукция">наша продукция</a></li>
+                                <li class="our-object-menu"><a href="#/Новости">объекты</a></li>
+                                <li class="our-contact-menu"><a href="#/обратная связь">обратная связь</a></li>
+                                <li class="our-contact-information-menu"><a href="#/контакты">контакты</a></li>
+                                <li class="our-news-menu"><a href="#/Новости">Новости</a></li>
+                            </ul>
+                       </div>
+                       <div class="header-menu-right-blog clearfix">
+                           <ul class="nav navbar-nav navbar-left">
+                               <div class="language-div clearfix">
+                                   <li><a href="#"><img src="assets/images/language_en.png"/></a></li>
+                                   <li><a href="#"><img src="assets/images/language_arm.png"/></a></li>
+                                </div>
+                                <li class="language"><a href="#"><img src="assets/images/language_ru.png"/></a></li>
+                            </ul>
+                            <ul class="navbar-nav navbar-right">
+                                <li><a href="#"><img src="assets/images/vk.png"/></a></li>
+                                <li><a href="#"><img src="assets/images/fb.png"/></a></li>
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    
+    <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="footer clearfix">
+                <div class="footer-text clearfix">
+                    <h2 class="footer_logo">
+                        <span class="logo_mav">MAV</span><span class="logo_ent">ENT</span>
+                    </h2>
+                    <p>Торговая марка «MAVENT»
+                        © 2013-2017 Все права защищены законом.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

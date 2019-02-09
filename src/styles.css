@@ -158,19 +158,20 @@ footer, header, hgroup, menu, nav, section {
     margin-left: 10px;
 }
 
-.navbar-right{
+.navbar-left{
     position: relative;
     float: left;
 }
 
-.navbar-left{
+.navbar-right{
     float: right !important;
     list-style: none;
     margin: 15px 0px 15px 10px;
 }
 
-.navbar-left li{
+.navbar-right li{
     margin-right: 10px;
+    margin-top: 15px;
     float: left;
 }
 
@@ -312,14 +313,6 @@ footer, header, hgroup, menu, nav, section {
     left: 50%;
 }
 
-.slider_images{
-    /*max-height: 800px;*/
-}
-
-.slider_images_active{
-
-}
-
 .slider-margin{
     margin-top: 64px;
 }
@@ -327,17 +320,9 @@ footer, header, hgroup, menu, nav, section {
 
 /* OUR PRODUCT */
 
-.our-product{
-
-}
-
 .our-name{
     text-align: center;
     margin-top: 130px;
-}
-
-.our-name img{
-
 }
 
 .our-name h2{
@@ -475,11 +460,6 @@ footer, header, hgroup, menu, nav, section {
     height: 30px;
     width: 60px;
     background-repeat: no-repeat;
-}
-
-
-.read_more{
-
 }
 
 .read_more .thumbnail img{
@@ -972,27 +952,8 @@ footer, header, hgroup, menu, nav, section {
     color: #ea212d;
 }
 
-.footer-social {
-    display: none;
-    margin-top: 9px;
-    letter-spacing: 12px;
-}
-
-.footer-social li{
-    display: inline-block;
-    list-style: none;
-}
-
 .help-block{
     display: none !important;
-}
-
-.glyphicon {
-    /*display: none !important;*/
-}
-
-.glyphicon-remove{
-    /*display: none !important;*/
 }
 
 .glyphicon-remove{
@@ -1020,11 +981,11 @@ footer, header, hgroup, menu, nav, section {
 }
 
 .single-product-images{
-    max-font-size: 500px;
+    font-size: 500px;
 }
 
 .single-product-content{
-    max-font-size: 500px;
+    font-size: 500px;
 }
 
 .single-slider{
@@ -1104,10 +1065,6 @@ footer, header, hgroup, menu, nav, section {
 
 /* ssingle-content */
 
-.single-content{
-
-}
-
 .single-header{
     padding: 0;
 }
@@ -1135,10 +1092,6 @@ footer, header, hgroup, menu, nav, section {
     padding-bottom: 30px;
     border-bottom: 1px solid #eeeeee;
     margin-bottom: 50px;
-}
-
-.single-description{
-    
 }
 
 .single-description h3{
@@ -1299,10 +1252,6 @@ ul.social-network li {
 
 
 /* our-product-all  */
-
-.our-product-all{
-
-}
 
 .our-name-all{
     text-align: center;
@@ -1536,7 +1485,7 @@ ul.social-network li {
         font-size: 14px;
         margin-right: 12px;
     }
-    .header-menu-right-blog .navbar-left li a img{
+    .header-menu-right-blog .navbar-right li a img{
         width: 22px;
     }
     .language-div li a img{
@@ -1560,7 +1509,7 @@ ul.social-network li {
 
 @media screen and (max-width: 768px)  {
 
-    .navbar-left {
+    .navbar-right {
         display: none;
     }
 
