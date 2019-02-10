@@ -117,7 +117,7 @@ footer, header, hgroup, menu, nav, section {
     width: 100%;
     max-width: 595px;
     margin: 0 auto;
-    float: right;
+    float: right !important;
 }
 
 .header-menu li{
@@ -155,7 +155,7 @@ footer, header, hgroup, menu, nav, section {
 
 .language-div li{
     float: left;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .navbar-left{
