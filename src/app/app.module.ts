@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { ObjectsComponent } from './Components/objects/objects.component';
 import { NewsComponent } from './Components/news/news.component';
 import { AllnewsComponent } from './Components/allnews/allnews.component';
 import { HomeComponent } from './Components/home/home.component';
+import { Slider1Component } from './Components/slider1/slider1.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { HomeComponent } from './Components/home/home.component';
     ObjectsComponent,
     NewsComponent,
     AllnewsComponent,
-    HomeComponent
+    HomeComponent,
+    Slider1Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -240,27 +240,27 @@ footer, header, hgroup, menu, nav, section {
 
 .slider_images img{
     width: 100%;
+    max-height: 800px;
 }
 
 .carousel-indicators .active {
-    width: 18px;
-    height: 18px;
-    margin: 0;
-    background-color: #ea212d;
-    border: none;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+    background-color: #ea212d !important;
+    border: none !important;
 }
 
 .carousel-indicators li {
-    display: inline-block;
-    width: 17px;
-    height: 17px;
-    margin: 1px;
-    text-indent: -999px;
-    cursor: pointer;
-    /* background-color: #000\9; */
-    background-color: rgba(0,0,0,0);
-    border: 2px solid #fff;
-    border-radius: 10px;
+    display: inline-block !important;
+    width: 17px !important;
+    height: 17px !important;
+    margin: 1px !important;
+    text-indent: -999px !important;
+    cursor: pointer !important;
+    background-color: rgba(0,0,0,0) !important;
+    border: 2px solid #fff !important;
+    border-radius: 10px !important;
 }
 
 .header-slider .header-slider-text{
