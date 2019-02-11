@@ -416,7 +416,7 @@ footer, header, hgroup, menu, nav, section {
     position: relative;
     margin-bottom: 40px;
     border-radius: 0 !important;
-    padding: 0;
+    padding: 0 !important;
 }
 
 .hide-hover-images{

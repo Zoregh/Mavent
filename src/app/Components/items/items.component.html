@@ -1,3 +1,37 @@
-<p>
-  items works!
-</p>
+<div class="wrapper">
+    <div class="our-product">
+        <div class="container">
+            <div class="row">
+                <div class="our-name">
+                    <img src="assets/images/3.png" />
+                    <h2>Наша продукция</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="facade-name col-lg-12">
+                    <h4>фасадные системы</h4>
+                    <hr class="hr_border">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="our-text">
+                    <p>В рамках объединения системы организован полный технологический цикл,
+                        который включает в себя разработку концепции облицовки здания -
+                        в соответствии с потребительскими предпочтениями.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="product clearfix">
+                    <app-item *ngFor="let item of itemsArr" [curntItem]="item"></app-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
