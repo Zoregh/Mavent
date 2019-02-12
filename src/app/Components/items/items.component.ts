@@ -7,10 +7,8 @@ import { GeneralService } from '../../Services/general.service';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-  public itemsArr: Array<any> = [];
 
   constructor(public service: GeneralService) { 
-    this.itemsArr = this.service.products.slice();
   }
 
   ngOnInit() {

@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row">
                 <div class="product clearfix">
-                    <app-item *ngFor="let item of itemsArr" [curntItem]="item"></app-item>
+                    <app-item *ngFor="let item of service.products" [curntItem]="item"></app-item>
                 </div>
             </div>
         </div>

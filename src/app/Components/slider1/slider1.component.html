@@ -12,14 +12,14 @@
               <div id="myCarousel" class="carousel slide slider-margin" data-ride="carousel">
                   <!-- Indicators -->
                   <ol class="carousel-indicators">
-                      <li *ngFor="let li of sliders; let i = index" [class.active]="i == 0" data-target="#myCarousel"
+                      <li *ngFor="let li of service.sliders; let i = index" [class.active]="i == 0" data-target="#myCarousel"
                           data-slide-to="0" class="active"></li>
                   </ol>
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
-                      <div *ngFor="let item of sliders; let i = index" [class.active]="i == 0"
+                      <div *ngFor="let item of service.sliders; let i = index" [class.active]="i == 0"
                           class="item active slider_images">
-                          <img src="{{item.img_full_path}}" alt="Chania" width="460" height="345">
+                          <img src="{{item.img_full_path}}" alt="Chania">
                       </div>
                   </div>
                   <!-- Left and right controls -->
