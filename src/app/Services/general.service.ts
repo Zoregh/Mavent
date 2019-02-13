@@ -5,9 +5,10 @@ import { HttpClient }    from '@angular/common/http';
   providedIn: 'root'
 })
 export class GeneralService {
-  public lng: string = 'ru';
+  public lng: string = 'en';
   public sliders: any = [];
   public products: Array<any> = [];
+  public randomProducts: Array<any> = [];
 
   constructor(private http: HttpClient) { 
     this.checkLang();
@@ -20,6 +21,7 @@ export class GeneralService {
     }
     this.getSlider1();
     this.getProducts();
+    this.getRandomProducts();
   }
 
   setLang(a){
@@ -45,6 +47,19 @@ export class GeneralService {
         for (let i = 0; i < data.length; i++) {
           this.products = this.products.concat(data[i].products);
         }
+      },
+      (error) =>{
+        console.log(error);
+      }
+      );
+  }
+
+  getRandomProducts(){
+    this.http.get('http://alikogrd.beget.tech/api/product/' + this.lng + '/products?limit=3&random=1').subscribe(
+      (data: any) => {
+        this.randomProducts = [];
+        this.randomProducts = this.randomProducts.concat(data);
+        console.log(this.randomProducts);
       },
       (error) =>{
         console.log(error);
