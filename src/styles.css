@@ -166,7 +166,7 @@ footer, header, hgroup, menu, nav, section {
 .navbar-right{
     float: right !important;
     list-style: none;
-    margin: 15px 0px 15px 10px;
+    /* margin: 15px 0px 15px 10px; */
 }
 
 .navbar-right li{
@@ -985,7 +985,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 .single-product-content{
-    font-size: 500px;
+    font-size: 50px;
 }
 
 .single-slider{
