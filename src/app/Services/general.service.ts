@@ -5,10 +5,11 @@ import { HttpClient }    from '@angular/common/http';
   providedIn: 'root'
 })
 export class GeneralService {
-  public lng: string = 'en';
+  public lng: string = 'ru';
   public sliders: any = [];
   public products: Array<any> = [];
   public randomProducts: Array<any> = [];
+  public itemDetails: any;
 
   constructor(private http: HttpClient) { 
     this.checkLang();
@@ -22,6 +23,7 @@ export class GeneralService {
     this.getSlider1();
     this.getProducts();
     this.getRandomProducts();
+    this.getItemDetails();
   }
 
   setLang(a){
@@ -59,7 +61,6 @@ export class GeneralService {
       (data: any) => {
         this.randomProducts = [];
         this.randomProducts = this.randomProducts.concat(data);
-        console.log(this.randomProducts);
       },
       (error) =>{
         console.log(error);
@@ -67,4 +68,30 @@ export class GeneralService {
       );
   }
 
+  getItemDetails(){
+    this.http.get('http://alikogrd.beget.tech/api/elements/elements?sub_alias=single_product_page').subscribe(
+      (data: any) => {
+        this.itemDetails = data.single_product_page.product[this.lng];
+        console.log(this.itemDetails);
+        
+      },
+      (error) =>{
+        console.log(error);
+      }
+      );
+  }
+
+
+
+
+  getProductByID(id){
+    let temp;
+    this.products.map((item)=>{
+      if(item.id == id){
+        temp=item;
+        return;
+      }
+    });
+    return temp;
+  }
 }

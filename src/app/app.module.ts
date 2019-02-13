@@ -12,6 +12,7 @@ import { NewsComponent } from './Components/news/news.component';
 import { AllnewsComponent } from './Components/allnews/allnews.component';
 import { HomeComponent } from './Components/home/home.component';
 import { Slider1Component } from './Components/slider1/slider1.component';
+import { ItemDetailsComponent } from './Components/item-details/item-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Slider1Component } from './Components/slider1/slider1.component';
     NewsComponent,
     AllnewsComponent,
     HomeComponent,
-    Slider1Component
+    Slider1Component,
+    ItemDetailsComponent
   ],
   imports: [
     BrowserModule,
