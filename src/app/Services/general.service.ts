@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient }    from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,9 @@ export class GeneralService {
   public products: Array<any> = [];
   public randomProducts: Array<any> = [];
   public itemDetails: any;
+  public id: number;
+
+  public currentProduct: Subject<{}> = new Subject;
 
   constructor(private http: HttpClient) { 
     this.checkLang();
@@ -24,6 +28,7 @@ export class GeneralService {
     this.getProducts();
     this.getRandomProducts();
     this.getItemDetails();
+    this.getProductByID(this.id);
   }
 
   setLang(a){
@@ -72,8 +77,6 @@ export class GeneralService {
     this.http.get('http://alikogrd.beget.tech/api/elements/elements?sub_alias=single_product_page').subscribe(
       (data: any) => {
         this.itemDetails = data.single_product_page.product[this.lng];
-        console.log(this.itemDetails);
-        
       },
       (error) =>{
         console.log(error);
@@ -81,17 +84,10 @@ export class GeneralService {
       );
   }
 
-
-
-
   getProductByID(id){
-    let temp;
-    this.products.map((item)=>{
-      if(item.id == id){
-        temp=item;
-        return;
-      }
-    });
-    return temp;
+    this.id = id;
+    this.http.get('http://alikogrd.beget.tech/api/product/' + this.lng +'/product?id=' + id).subscribe(res => {
+      this.currentProduct.next(res);
+    })
   }
 }
