@@ -12,28 +12,14 @@
                 <ol class="carousel-indicators">
                   <li data-target="#myCarousel3" data-slide-to="0" class="active"></li>
                   <li data-target="#myCarousel3" data-slide-to="1"></li>
-                  <li data-target="#myCarousel3" data-slide-to="2"></li>
-                  <li data-target="#myCarousel3" data-slide-to="3"></li>
                 </ol>
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                   <div class="item active slider_images">
-                    <img class="group list-group-image" src="assets/images/product-image.jpg" alt="" />
+                    <img class="group list-group-image" src="{{currentObject.full_img_path}}" alt="" />
                     <span class="product_new_single">NEW</span>
                     <!--<img src="images/dark.jpg" alt="Chania" width="460" height="345">-->
                   </div>
-                  <div class="item slider_images">
-                    <img class="group list-group-image" src="assets/images/product-image.jpg" alt="" />
-                    <span class="product_new_single">NEW</span>
-
-                    <!--<img src="images/dark2.jpg" alt="Chania" width="460" height="345">-->
-                  </div>
-
-                  <div class="item slider_images">
-                    <img class="group list-group-image" src="assets/images/product-image.jpg" alt="" />
-                    <span class="product_new_single">NEW</span>
-                  </div>
-
                   <div class="item slider_images">
                     <img class="group list-group-image" src="assets/images/product-image.jpg" alt="" />
                     <span class="product_new_single">NEW</span>
@@ -49,8 +35,8 @@
               <div class="single-header-content clearfix">
                 <div class="single-header col-xs-12 col-sm-9 col-md-9  col-lg-9">
                   <span>Есть в наличии</span>
-                  <h1>MTC-V-350 </h1>
-                  <p>Крепление декоративной пазогребневой плитки под кирпич на планках</p>
+                  <h1>{{currentObject.multilanguage.title}}</h1>
+                  <p>{{currentObject.multilanguage.short_description}}</p>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3  col-lg-3">
                   <ul class="social-network social-circle">
