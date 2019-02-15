@@ -3,17 +3,14 @@
       <div class="header-slider">
           <div class="header-slider-text">
               <h1><span class="slider_mav">MAV</span><span class="slider_ent">ENT</span></h1>
-              <h4>Вентрилируемые фасады</h4>
-              <p>Система «MAVent» известна на российском рынке,
-                  которая специализируется на проектировании, производстве,
-                  поставке и монтаже вентилируемых фасадов.</p>
+              <h4>{{service.sliderText.title}}</h4>
+              <p>{{service.sliderText.description}}</p>
           </div>
           <div class="container-fluid slider-container">
               <div id="myCarousel" class="carousel slide slider-margin" data-ride="carousel">
                   <!-- Indicators -->
                   <ol class="carousel-indicators">
-                      <li *ngFor="let li of service.sliders; let i = index" [class.active]="i == 0" data-target="#myCarousel"
-                          data-slide-to="0"></li>
+                      <li *ngFor="let li of service.sliders; let i = index" [class.active]="i == 0" data-target="#myCarousel" data-slide-to="0"></li>
                   </ol>
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">

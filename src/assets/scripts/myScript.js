@@ -89,7 +89,7 @@ $(document).ready(function(){
 
             // Use Ajax to submit form data
             $.post($form.attr('action'), $form.serialize(), function(result) {
-                console.log(result);
+                // console.log(result);
             }, 'json');
         });
 
@@ -122,7 +122,7 @@ $(document).ready(function(){
 
 
     if($(window).width() < 1200) {
-        console.log("mobile");
+        // console.log("mobile");
             $('.our-product-menu').click(function(){
                 $("body").animate({ scrollTop: 900 }, 700);
             });
@@ -130,7 +130,7 @@ $(document).ready(function(){
 
 
     if($(window).width() < 992) {
-        console.log("mobile");
+        // console.log("mobile");
             $('.our-product-menu').click(function(){
                 $("body").animate({ scrollTop: 900 }, 1100);
             });
