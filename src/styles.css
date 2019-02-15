@@ -595,6 +595,10 @@ footer, header, hgroup, menu, nav, section {
     margin: 0 auto;
 }
 
+#myCarousel2 .slider_images {
+    max-height: 470px;
+}
+
 .prev-img{
     left: 26% !important;
     position: absolute;
@@ -1422,6 +1426,10 @@ ul.social-network li {
         max-height: 650px;
     }
 
+    #myCarousel2 .slider_images {
+        max-height: 470px;
+    }
+
 }
 
 
@@ -1432,6 +1440,10 @@ ul.social-network li {
     .slider_images img{
         width: 100%;
         max-height: 550px;
+    }
+
+    #myCarousel2 .slider_images {
+        max-height: 450px;
     }
 }
 
@@ -1455,6 +1467,10 @@ ul.social-network li {
         width: 100%;
         max-height: 550px;
     }
+
+    #myCarousel2 .slider_images {
+        max-height: 430px;
+    }
 }
 
 
@@ -1465,6 +1481,10 @@ ul.social-network li {
     .slider_images img{
         width: 100%;
         max-height: 500px;
+    }
+
+    #myCarousel2 .slider_images {
+        max-height: 400px;
     }
 }
 
@@ -1487,6 +1507,10 @@ ul.social-network li {
     .slider_images img{
         width: 100%;
         max-height: 480px;
+    }
+
+    #myCarousel2 .slider_images {
+        max-height: 380px;
     }
 }
 
@@ -1655,6 +1679,10 @@ ul.social-network li {
     }
     .slider_images img{
         width: 100%;
+        max-height: 240px;
+    }
+
+    #myCarousel2 .slider_images {
         max-height: 240px;
     }
 }

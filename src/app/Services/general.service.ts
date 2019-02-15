@@ -20,6 +20,8 @@ export class GeneralService {
   public wellcomeText: any = {};
   public aboutText: any = {};
   public objectsText: any = {};
+  public slider2: Array<any> = [];
+  public singleObjectText: any = {};
 
   public currentProduct: Subject<{}> = new Subject;
 
@@ -39,6 +41,7 @@ export class GeneralService {
     this.getItemDetails();
     this.getProductByID(this.id);
     this.getAllProducts();
+    this.getSlider2();
   }
 
   setLang(a){
@@ -50,6 +53,17 @@ export class GeneralService {
     this.http.get(`http://alikogrd.beget.tech/api/slide/${this.lng}/slides`).subscribe(
       (data: any) => {
         this.sliders = data.slice();
+      },
+      (error) =>{
+        console.log(error);
+      }
+      );
+  }
+
+  getSlider2(){
+    this.http.get(`http://alikogrd.beget.tech/api/object/${this.lng}/object`).subscribe(
+      (data: any) => {
+        this.slider2 = data.images.slice();
       },
       (error) =>{
         console.log(error);
@@ -70,6 +84,9 @@ export class GeneralService {
         }
         this.aboutText.description = removeTags( this.aboutText.description );
         this.objectsText = data.home.object[this.lng];
+        this.singleObjectText = data.single_object_page.object[this.lng];
+        console.log(this.singleObjectText);
+        
       },
       (error) =>{
         console.log(error);

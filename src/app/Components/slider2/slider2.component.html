@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <div class="container slider-container">
+    <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li *ngFor="let li of service.slider2; let i = index" [class.active]="i == 0" data-target="#myCarousel2"
+          data-slide-to="0"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner carousel-inner2" role="listbox">
+        <div *ngFor="let image of service.slider2; let i = index" [class.active]="i == 0"
+          class="item active slider_images">
+          <img src="{{image}}" alt="Chania">
+        </div>
+      </div>
+      <!-- Left and right controls -->
+      <a class="prev_a carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+        <img class="prev-img glyphicon-chevron-left" src="../../../assets/images/slider-arrow-left.png" alt="Previous">
+      </a>
+      <a class="next_a right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+        <img class="next-img glyphicon-chevron-right" src="../../../assets/images/slider-arrow-right.png" alt="Next">
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="our-slide-bottom-element clearfix">
+
+        <div class="our-slide-bottom-blog col-xs-6 col-sm-4 col-md-4  col-lg-4">
+          <div class="our-slide-bottom-content">
+            <h4>{{service.singleObjectText.name}}</h4>
+            <p>{{service.singleObjectText.sub_content_1}}</p>
+          </div>
+        </div>
+
+        <div class="our-slide-bottom-blog col-xs-6 col-sm-4 col-md-4  col-lg-4">
+          <div class="our-slide-bottom-content">
+            <h4>{{service.singleObjectText.address}}</h4>
+            <p>{{service.singleObjectText.sub_content_2}}</p>
+          </div>
+        </div>
+
+        <div class="our-slide-bottom-blog col-xs-12 col-sm-4 col-md-4  col-lg-4">
+          <div class="our-slide-bottom-content our-slide-bottom-last">
+            <h4>{{service.singleObjectText.workload}}</h4>
+            <p>{{service.singleObjectText.sub_content_3}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
