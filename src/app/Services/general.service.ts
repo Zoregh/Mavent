@@ -19,6 +19,7 @@ export class GeneralService {
   public homeProduct: any = {};
   public wellcomeText: any = {};
   public aboutText: any = {};
+  public objectsText: any = {};
 
   public currentProduct: Subject<{}> = new Subject;
 
@@ -68,6 +69,7 @@ export class GeneralService {
           return text ? String(text).replace(/<[^>]+>/gm, '') : '';
         }
         this.aboutText.description = removeTags( this.aboutText.description );
+        this.objectsText = data.home.object[this.lng];
       },
       (error) =>{
         console.log(error);

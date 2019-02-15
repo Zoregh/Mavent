@@ -15,6 +15,7 @@ import { Slider1Component } from './Components/slider1/slider1.component';
 import { ItemDetailsComponent } from './Components/item-details/item-details.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { AboutComponent } from './Components/about/about.component';
+import { ObjectsInfoComponent } from './Components/objects-info/objects-info.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AboutComponent } from './Components/about/about.component';
     Slider1Component,
     ItemDetailsComponent,
     ProductsComponent,
-    AboutComponent
+    AboutComponent,
+    ObjectsInfoComponent
   ],
   imports: [
     BrowserModule,
