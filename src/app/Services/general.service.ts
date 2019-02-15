@@ -9,6 +9,7 @@ export class GeneralService {
   public lng: string = 'ru';
   public sliders: any = [];
   public products: Array<any> = [];
+  public allProducts: Array<any> = [];
   public randomProducts: Array<any> = [];
   public itemDetails: any;
   public id: number;
@@ -16,6 +17,7 @@ export class GeneralService {
   public sliderText: any = {};
   public navbarText: any = {};
   public homeProduct: any = {};
+  public wellcomeText: any = {};
 
   public currentProduct: Subject<{}> = new Subject;
 
@@ -34,6 +36,7 @@ export class GeneralService {
     this.getRandomProducts();
     this.getItemDetails();
     this.getProductByID(this.id);
+    this.getAllProducts();
   }
 
   setLang(a){
@@ -58,6 +61,7 @@ export class GeneralService {
         this.sliderText = data.home.slider[this.lng];
         this.navbarText = data.navbar_menu.navbar[this.lng];
         this.homeProduct = data.home.product[this.lng];
+        this.wellcomeText = data.object_page.object[this.lng].description;
       },
       (error) =>{
         console.log(error);
@@ -106,8 +110,22 @@ export class GeneralService {
 
   getProductByID(id){
     this.id = id;
-    this.http.get('http://alikogrd.beget.tech/api/product/' + this.lng +'/product?id=' + id).subscribe(res => {
+    this.http.get('http://alikogrd.beget.tech/api/product/' + this.lng + '/product?id=' + id).subscribe(res => {
       this.currentProduct.next(res);
     })
+  }
+
+  getAllProducts(){
+    this.http.get('http://alikogrd.beget.tech/api/product/' + this.lng + '/type-products').subscribe(
+      (data: any) => {
+        this.allProducts = [];
+        for (let i = 0; i < data.length; i++) {
+          this.allProducts = this.allProducts.concat(data[i].products);
+        }
+      },
+      (error) =>{
+        console.log(error);
+      }
+      );
   }
 }

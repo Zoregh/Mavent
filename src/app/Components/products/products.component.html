@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <div class="our-product-all">
+        <div class="container">
+            <div class="row">
+                <div class="our-name-all">
+                    <h2>{{service.homeProduct.title}}</h2>
+                </div>
+                <div class="our-text-all">
+                    <p>{{service.wellcomeText}}</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="facade-name col-lg-12">
+                    <h4>{{service.borderedTitles[0]}}</h4>
+                    <hr class="hr_border">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="our-text">
+                    <p>{{service.homeProduct.description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="product clearfix">
+                    <app-item *ngFor="let item of service.allProducts" [curntItem]="item"></app-item>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="facade-name col-lg-12">
+                    <h4>{{service.borderedTitles[1]}}</h4>
+                    <hr class="hr_border">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="our-text">
+                    <p>{{service.homeProduct.description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="product clearfix">
+                    <app-item *ngFor="let item of service.randomProducts" [curntItem]="item"></app-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,6 +13,7 @@ import { AllnewsComponent } from './Components/allnews/allnews.component';
 import { HomeComponent } from './Components/home/home.component';
 import { Slider1Component } from './Components/slider1/slider1.component';
 import { ItemDetailsComponent } from './Components/item-details/item-details.component';
+import { ProductsComponent } from './Components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ItemDetailsComponent } from './Components/item-details/item-details.com
     AllnewsComponent,
     HomeComponent,
     Slider1Component,
-    ItemDetailsComponent
+    ItemDetailsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
