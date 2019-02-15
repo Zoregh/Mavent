@@ -18,6 +18,7 @@ export class GeneralService {
   public navbarText: any = {};
   public homeProduct: any = {};
   public wellcomeText: any = {};
+  public aboutText: any = {};
 
   public currentProduct: Subject<{}> = new Subject;
 
@@ -45,7 +46,7 @@ export class GeneralService {
   }
 
   getSlider1(){
-    this.http.get('http://alikogrd.beget.tech/api/slide/' + this.lng + '/slides').subscribe(
+    this.http.get(`http://alikogrd.beget.tech/api/slide/${this.lng}/slides`).subscribe(
       (data: any) => {
         this.sliders = data.slice();
       },
@@ -62,6 +63,11 @@ export class GeneralService {
         this.navbarText = data.navbar_menu.navbar[this.lng];
         this.homeProduct = data.home.product[this.lng];
         this.wellcomeText = data.object_page.object[this.lng].description;
+        this.aboutText = data.home.about[this.lng];
+        function removeTags(text) {
+          return text ? String(text).replace(/<[^>]+>/gm, '') : '';
+        }
+        this.aboutText.description = removeTags( this.aboutText.description );
       },
       (error) =>{
         console.log(error);
@@ -70,7 +76,7 @@ export class GeneralService {
   }
 
   getProducts(){
-    this.http.get('http://alikogrd.beget.tech/api/product/' + this.lng + '/type-products?limit=5').subscribe(
+    this.http.get(`http://alikogrd.beget.tech/api/product/${this.lng}/type-products?limit=5`).subscribe(
       (data: any) => {
         this.products = [];
         this.borderedTitles = [];
@@ -86,7 +92,7 @@ export class GeneralService {
   }
 
   getRandomProducts(){
-    this.http.get('http://alikogrd.beget.tech/api/product/' + this.lng + '/products?limit=3&random=1').subscribe(
+    this.http.get(`http://alikogrd.beget.tech/api/product/${this.lng}/products?limit=3&random=1`).subscribe(
       (data: any) => {
         this.randomProducts = [];
         this.randomProducts = this.randomProducts.concat(data);
@@ -110,7 +116,7 @@ export class GeneralService {
 
   getProductByID(id){
     this.id = id;
-    this.http.get('http://alikogrd.beget.tech/api/product/' + this.lng + '/product?id=' + id).subscribe(res => {
+    this.http.get(`http://alikogrd.beget.tech/api/product/${this.lng}/product?id=${id}`).subscribe(res => {
       this.currentProduct.next(res);
     })
   }
