@@ -12,6 +12,7 @@ export class GeneralService {
   public randomProducts: Array<any> = [];
   public itemDetails: any;
   public id: number;
+  public borderedTitles: Array<any> = [];
   public sliderText: any = {};
   public navbarText: any = {};
   public homeProduct: any = {};
@@ -68,8 +69,10 @@ export class GeneralService {
     this.http.get('http://alikogrd.beget.tech/api/product/' + this.lng + '/type-products?limit=5').subscribe(
       (data: any) => {
         this.products = [];
+        this.borderedTitles = [];
         for (let i = 0; i < data.length; i++) {
           this.products = this.products.concat(data[i].products);
+          this.borderedTitles.push(data[i].title);
         }
       },
       (error) =>{
