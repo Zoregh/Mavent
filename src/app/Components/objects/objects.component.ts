@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from '../../Services/general.service';
 
 @Component({
   selector: 'app-objects',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObjectsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: GeneralService) { }
 
   ngOnInit() {
   }
