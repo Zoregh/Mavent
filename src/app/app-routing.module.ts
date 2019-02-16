@@ -4,14 +4,16 @@ import { HomeComponent } from './Components/home/home.component';
 import { ItemDetailsComponent } from './Components/item-details/item-details.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { ObjectsComponent } from './Components/objects/objects.component';
-import { ObjectDetailsComponent } from './Components/object-details/object-details.component'
+import { ObjectDetailsComponent } from './Components/object-details/object-details.component';
+import { FeedbackComponent } from './Components/feedback/feedback.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'item/:id', component: ItemDetailsComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'objects', component: ObjectsComponent},
-  {path: 'object/:id', component: ObjectDetailsComponent}
+  {path: 'object/:id', component: ObjectDetailsComponent},
+  {path: 'feedback', component: FeedbackComponent}
 
 ];
 

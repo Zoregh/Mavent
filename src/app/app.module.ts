@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { AboutComponent } from './Components/about/about.component';
 import { ObjectsInfoComponent } from './Components/objects-info/objects-info.component';
 import { Slider2Component } from './Components/slider2/slider2.component';
 import { ObjectDetailsComponent } from './Components/object-details/object-details.component';
+import { FeedbackComponent } from './Components/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +37,14 @@ import { ObjectDetailsComponent } from './Components/object-details/object-detai
     AboutComponent,
     ObjectsInfoComponent,
     Slider2Component,
-    ObjectDetailsComponent
+    ObjectDetailsComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
