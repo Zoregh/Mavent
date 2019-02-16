@@ -1,3 +1,12 @@
-<p>
-  object works!
-</p>
+<div class="item-product2 col-xs-12 col-sm-4 col-md-4  col-lg-4">
+  <div class="item-product news-post">
+    <div class="thumbnail">
+      <a href="#"><span>{{currentObject.multilanguage.title}}</span></a>
+      <a [routerLink]="['/object',currentObject.id]" class="hide-hover-images-product">
+        <img class="group list-group-image" src="../../../assets/images/product-hover-eye-full.png" alt="">
+      </a>
+      <img src="{{currentObject.images[0]}}">
+      <span class="object-bottom">{{currentObject.size}} M2</span>
+    </div>
+  </div>
+</div>

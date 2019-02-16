@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="object-page">
+    <div class="container">
+      <div class="row">
+        <div class="object-page-social clearfix">
+          <ul class="social-network social-circle">
+            <li><a href="https://www.facebook.com/mavent" class="icoFacebook" title="Facebook"><i
+                  class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/mavent" class="icoTwitter" title="Twitter"><i
+                  class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/mavent" class="icoLinkedin" title="Linkedin"><i
+                  class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://plus.google.com/discover" class="icoGoogle" title="Google +"><i
+                  class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <app-slider2></app-slider2>
+    <hr>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="news clearfix">
+          <h1>{{service.singleObjectText.other}}</h1>
+          <div class="news-content clearfix">
+            <app-object *ngFor="let object of service.randomObjects" [currentObject]="object"></app-object>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

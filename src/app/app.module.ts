@@ -17,6 +17,7 @@ import { ProductsComponent } from './Components/products/products.component';
 import { AboutComponent } from './Components/about/about.component';
 import { ObjectsInfoComponent } from './Components/objects-info/objects-info.component';
 import { Slider2Component } from './Components/slider2/slider2.component';
+import { ObjectDetailsComponent } from './Components/object-details/object-details.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { Slider2Component } from './Components/slider2/slider2.component';
     ProductsComponent,
     AboutComponent,
     ObjectsInfoComponent,
-    Slider2Component
+    Slider2Component,
+    ObjectDetailsComponent
   ],
   imports: [
     BrowserModule,

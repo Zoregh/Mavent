@@ -23,6 +23,7 @@ export class GeneralService {
   public slider2: Array<any> = [];
   public singleObjectText: any = {};
   public allObjects: Array<any> = [];
+  public randomObjects: Array<any> = [];
 
   public currentProduct: Subject<{}> = new Subject;
 
@@ -44,6 +45,7 @@ export class GeneralService {
     this.getAllProducts();
     this.getSlider2();
     this.getAllObjects();
+    this.getRandomObjects();
   }
 
   setLang(a){
@@ -76,7 +78,6 @@ export class GeneralService {
   getText(){
     this.http.get('http://alikogrd.beget.tech/api/elements/elements').subscribe(
       (data: any) => {
-        console.log(data);
         this.sliderText = data.home.slider[this.lng];
         this.navbarText = data.navbar_menu.navbar[this.lng];
         this.homeProduct = data.home.product[this.lng];
@@ -163,6 +164,17 @@ export class GeneralService {
         for (let i = 0; i < data.length; i++) {
           this.allObjects = this.allObjects.concat(data[i]);
         }
+      },
+      (error) =>{
+        console.log(error);
+      }
+      );
+  }
+
+  getRandomObjects(){
+    this.http.get(`http://alikogrd.beget.tech/api/object/${this.lng}/objects?limit=3&random=1`).subscribe(
+      (data: any) => {
+        this.randomObjects = data;
       },
       (error) =>{
         console.log(error);

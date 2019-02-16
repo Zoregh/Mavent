@@ -2,24 +2,10 @@
   <div class="container-fluid">
     <div class="row">
       <div class="object-all clearfix">
-        <h1>Наши объекты</h1>
-        <p class="object-all-title-desc">Добро пожаловать на страницу объектов компании «MAVENT»
-          На это странице собраны все наши объекты, которые были успешно реализованы.</p>
+        <h1>{{service.objectsText.title}}</h1>
+        <p class="object-all-title-desc">{{service.wellcomeText}}</p>
         <div class="object-content clearfix">
-
-          <div *ngFor="let object of service.allObjects" class="item-product2 col-xs-12 col-sm-4 col-md-4  col-lg-4">
-            <div class="item-product news-post">
-              <div class="thumbnail">
-                <a href="#"><span>{{object.multilanguage.title}}</span>
-                </a>
-                <a href="#" class="hide-hover-images-product"><img class="group list-group-image"
-                    src="../../../assets/images/product-hover-eye-full.png" alt="" /></a>
-                <img src="{{object.images[0]}}">
-                <span class="object-bottom">{{object.size}} M2</span>
-              </div>
-            </div>
-          </div>
-
+          <app-object *ngFor="let object of service.allObjects" [currentObject]="object"></app-object>
         </div>
       </div>
     </div>

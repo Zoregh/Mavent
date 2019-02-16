@@ -29,21 +29,21 @@
         <div class="our-slide-bottom-blog col-xs-6 col-sm-4 col-md-4  col-lg-4">
           <div class="our-slide-bottom-content">
             <h4>{{service.singleObjectText.name}}</h4>
-            <p>{{service.singleObjectText.sub_content_1}}</p>
+            <p>{{service.singleObjectText.sub_content_1? service.singleObjectText.sub_content_1 : 'Admin! PLease update data.'}}</p>
           </div>
         </div>
 
         <div class="our-slide-bottom-blog col-xs-6 col-sm-4 col-md-4  col-lg-4">
           <div class="our-slide-bottom-content">
             <h4>{{service.singleObjectText.address}}</h4>
-            <p>{{service.singleObjectText.sub_content_2}}</p>
+            <p>{{service.singleObjectText.sub_content_2? service.singleObjectText.sub_content_2 : 'Admin! PLease update data.'}}</p>
           </div>
         </div>
 
         <div class="our-slide-bottom-blog col-xs-12 col-sm-4 col-md-4  col-lg-4">
           <div class="our-slide-bottom-content our-slide-bottom-last">
             <h4>{{service.singleObjectText.workload}}</h4>
-            <p>{{service.singleObjectText.sub_content_3}}</p>
+            <p>{{service.singleObjectText.sub_content_3? service.singleObjectText.sub_content_3 : 'Admin! PLease update data.'}}</p>
           </div>
         </div>
 
