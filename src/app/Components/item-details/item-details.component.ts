@@ -21,13 +21,17 @@ export class ItemDetailsComponent implements OnInit, OnDestroy {
     this.subscribeForProduct();
 
     this.activeRoute.params.subscribe((params) => {
-      this.myService.getProductByID(params['id']);
+      this.myService.getItemByID(params['id']);
     });
   }
 
   subscribeForProduct() {
     this.productSubscription = this.myService.currentProduct.subscribe(product => {
       this.currentObject = product;
+      function removeTags(text) {
+        return text ? String(text).replace(/<[^>]+>/gm, '') : '';
+      }
+      this.currentObject.long_description = removeTags(this.currentObject.long_description);
     });
   }
 

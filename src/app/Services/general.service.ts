@@ -40,7 +40,7 @@ export class GeneralService {
     this.getProducts();
     this.getRandomProducts();
     this.getItemDetails();
-    this.getProductByID(this.id);
+    this.getItemByID(this.id);
     this.getAllProducts();
     this.getSlider2();
     this.getAllObjects();
@@ -76,6 +76,7 @@ export class GeneralService {
   getText(){
     this.http.get('http://alikogrd.beget.tech/api/elements/elements').subscribe(
       (data: any) => {
+        console.log(data);
         this.sliderText = data.home.slider[this.lng];
         this.navbarText = data.navbar_menu.navbar[this.lng];
         this.homeProduct = data.home.product[this.lng];
@@ -133,7 +134,7 @@ export class GeneralService {
       );
   }
 
-  getProductByID(id){
+  getItemByID(id){
     this.id = id;
     this.http.get(`http://alikogrd.beget.tech/api/product/${this.lng}/product?id=${id}`).subscribe(res => {
       this.currentProduct.next(res);
@@ -162,8 +163,6 @@ export class GeneralService {
         for (let i = 0; i < data.length; i++) {
           this.allObjects = this.allObjects.concat(data[i]);
         }
-        console.log(this.allObjects);
-        
       },
       (error) =>{
         console.log(error);
