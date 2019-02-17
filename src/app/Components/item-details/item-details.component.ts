@@ -9,11 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./item-details.component.css']
 })
 export class ItemDetailsComponent implements OnInit, OnDestroy {
-  public currentObject: any = {
-    available_current_lng: {},
-    status_current_lng: {}
-  };
-  productSubscription: Subscription;
+  public randomProducts: Array<any> = [];
+  private productSubscription: Subscription;
 
   constructor(public myService: GeneralService, public router: Router, public activeRoute: ActivatedRoute) { }
 
@@ -33,9 +30,21 @@ export class ItemDetailsComponent implements OnInit, OnDestroy {
       }
       this.currentObject.long_description = removeTags(this.currentObject.long_description);
     });
+
+    this.myService.getRandomProducts().subscribe(data => {
+      this.randomProducts = [];
+      this.randomProducts = this.randomProducts.concat(data);
+    });
+
   }
 
   ngOnDestroy() {
     this.productSubscription.unsubscribe();
   }
+
+  public currentObject: any = {
+    available_current_lng: {},
+    status_current_lng: {}
+  };
+
 }
