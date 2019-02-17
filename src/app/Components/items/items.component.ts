@@ -39,8 +39,8 @@ export class ItemsComponent implements OnInit, OnDestroy {
       this.homeProducts = [];
       this.borderedTitles = [];
       for (let i = 0; i < this.allData.length; i++) {
-        this.homeProducts = this.homeProducts.concat(data[i].products);
-        this.borderedTitles.push(data[i].title);
+        this.homeProducts = this.homeProducts.concat(this.allData[i].products);
+        this.borderedTitles.push(this.allData[i].title);
       }
     });
 
