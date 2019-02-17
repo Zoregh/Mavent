@@ -8,14 +8,12 @@ import { Subject } from 'rxjs';
 export class GeneralService {
   public lng: string = 'ru';
   public langChange: Subject<string>;
-  public sliders: any = [];
   public products: Array<any> = [];
   public allProducts: Array<any> = [];
   public randomProducts: Array<any> = [];
   public itemDetails: any;
   public id: number;
   public borderedTitles: Array<any> = [];
-  public sliderText: any = {};
   public navbarText: any = {};
   public homeProduct: any = {};
   public wellcomeText: any = {};
@@ -44,12 +42,15 @@ export class GeneralService {
     return this.http.get('http://alikogrd.beget.tech/api/elements/elements');
   }
 
+  getSlider1(){
+    return this.http.get(`http://alikogrd.beget.tech/api/slide/${this.lng}/slides`);
+  }
+  
   checkLang(){
     const storedLang = JSON.parse(localStorage.getItem('Language'));
     if (storedLang) {
       this.lng = storedLang;
     }
-    this.getSlider1();
     this.getText();
     this.getProducts();
     this.getRandomProducts();
@@ -62,16 +63,6 @@ export class GeneralService {
   }
 
 
-  getSlider1(){
-    this.http.get(`http://alikogrd.beget.tech/api/slide/${this.lng}/slides`).subscribe(
-      (data: any) => {
-        this.sliders = data.slice();
-      },
-      (error) =>{
-        console.log(error);
-      }
-      );
-  }
 
   getSlider2(){
     this.http.get(`http://alikogrd.beget.tech/api/object/${this.lng}/object`).subscribe(
@@ -87,7 +78,6 @@ export class GeneralService {
   getText(){
     this.http.get('http://alikogrd.beget.tech/api/elements/elements').subscribe(
       (data: any) => {
-        this.sliderText = data.home.slider[this.lng];
         this.navbarText = data.navbar_menu.navbar[this.lng];
         this.homeProduct = data.home.product[this.lng];
         this.wellcomeText = data.object_page.object[this.lng].description;
