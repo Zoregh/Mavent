@@ -13,7 +13,6 @@ export class GeneralService {
   public id: number;
   public navbarText: any = {};
   public wellcomeText: any = {};
-  public aboutText: any = {};
   public objectsText: any = {};
   public slider2: Array<any> = [];
   public singleObjectText: any = {};
@@ -81,11 +80,6 @@ export class GeneralService {
       (data: any) => {
         this.navbarText = data.navbar_menu.navbar[this.lng];
         this.wellcomeText = data.object_page.object[this.lng].description;
-        this.aboutText = data.home.about[this.lng];
-        function removeTags(text) {
-          return text ? String(text).replace(/<[^>]+>/gm, '') : '';
-        }
-        this.aboutText.description = removeTags( this.aboutText.description );
         this.objectsText = data.home.object[this.lng];
         this.singleObjectText = data.single_object_page.object[this.lng];
       },
