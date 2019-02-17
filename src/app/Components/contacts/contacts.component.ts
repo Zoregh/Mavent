@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GeneralService } from '../../Services/general.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.css']
 })
-export class ContactsComponent implements OnInit {
+export class ContactsComponent implements OnInit, OnDestroy {
+  private langChangesSubscription: Subscription;
   public lang: string = this.service.lng;
   public titles: any = {};
   public contactsData: any = {};
@@ -15,7 +17,7 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit() {
     this.getAllData();
-    this.service.langChange.subscribe((a)=> {
+    this.langChangesSubscription  = this.service.langChange.subscribe((a)=> {
       this.lang = a;
       this.getAllData();
     });
@@ -36,7 +38,7 @@ export class ContactsComponent implements OnInit {
   };
 
   ngOnDestroy() {
-    this.service.langChange.unsubscribe();
+    this.langChangesSubscription.unsubscribe();
   }
   
 }

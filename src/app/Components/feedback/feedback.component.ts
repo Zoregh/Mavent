@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GeneralService } from '../../Services/general.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.css']
 })
-export class FeedbackComponent implements OnInit {
+export class FeedbackComponent implements OnInit, OnDestroy {
   public lang = this.service.lng;
   public feedbackData: any = {};
+  private langChangeSubscription: Subscription;
 
 
   constructor(private service: GeneralService) { }
 
   ngOnInit() {
     this.getData();
-    this.service.langChange.subscribe((a)=> {
+    this.langChangeSubscription = this.service.langChange.subscribe((a)=> {
       this.lang = a;
       this.getData();
     });
@@ -35,7 +37,7 @@ export class FeedbackComponent implements OnInit {
   };
 
   ngOnDestroy() {
-    this.service.langChange.unsubscribe();
+    this.langChangeSubscription.unsubscribe();
   }
 
 }

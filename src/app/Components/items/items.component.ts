@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GeneralService } from '../../Services/general.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.css']
 })
-export class ItemsComponent implements OnInit {
+export class ItemsComponent implements OnInit, OnDestroy {
+  private langChangesSubscription: Subscription;
   public lang: string = this.service.lng;
   public allData: any = {};
   public homeProducts: Array<any> = [];
@@ -20,7 +22,7 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
-    this.service.langChange.subscribe((a)=> {
+    this.langChangesSubscription = this.service.langChange.subscribe((a)=> {
       this.lang = a;
       this.getData();
     });
@@ -47,6 +49,10 @@ export class ItemsComponent implements OnInit {
       this.randomProducts = this.randomProducts.concat(data);
     });
 
+  }
+
+  ngOnDestroy() {
+    this.langChangesSubscription.unsubscribe();
   }
 
 }
