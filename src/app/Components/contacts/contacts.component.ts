@@ -33,6 +33,10 @@ export class ContactsComponent implements OnInit {
     home: {
       contacts: {}
     }
-};
+  };
+
+  ngOnDestroy() {
+    this.service.langChange.unsubscribe();
+  }
   
 }

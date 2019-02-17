@@ -34,4 +34,8 @@ export class FeedbackComponent implements OnInit {
     }
   };
 
+  ngOnDestroy() {
+    this.service.langChange.unsubscribe();
+  }
+
 }
