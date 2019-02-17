@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 })
 export class GeneralService {
   public lng: string = 'ru';
+  public langChange: Subject<string>;
   public sliders: any = [];
   public products: Array<any> = [];
   public allProducts: Array<any> = [];
@@ -24,10 +25,18 @@ export class GeneralService {
   public singleObjectText: any = {};
   public allObjects: Array<any> = [];
   public randomObjects: Array<any> = [];
-
+  
   public currentProduct: Subject<{}> = new Subject;
-
+  
   constructor(private http: HttpClient) { 
+    this.langChange = new Subject;
+    this.setLang(this.lng);
+    // this.checkLang();
+  }
+
+  setLang(a){
+    localStorage.setItem('Language', JSON.stringify(a));
+    this.langChange.next(a); 
     this.checkLang();
   }
 
@@ -52,10 +61,6 @@ export class GeneralService {
     this.getRandomObjects();
   }
 
-  setLang(a){
-    localStorage.setItem('Language', JSON.stringify(a));
-    this.checkLang();
-  }
 
   getSlider1(){
     this.http.get(`http://alikogrd.beget.tech/api/slide/${this.lng}/slides`).subscribe(

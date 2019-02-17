@@ -14,6 +14,14 @@ export class FeedbackComponent implements OnInit {
   constructor(private service: GeneralService) { }
 
   ngOnInit() {
+    this.getData();
+    this.service.langChange.subscribe((a)=> {
+      this.lang = a;
+      this.getData();
+    });
+  }
+
+  public getData(){
     this.service.getAllTextData().subscribe(data => {
       this.allData = data;
       this.feedbackData = this.allData.home.feedback[this.lang];

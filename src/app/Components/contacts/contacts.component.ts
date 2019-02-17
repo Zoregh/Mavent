@@ -8,13 +8,20 @@ import { GeneralService } from '../../Services/general.service';
 })
 export class ContactsComponent implements OnInit {
   public lang: string = this.service.lng;
-
   public titles: any = {};
   public contactsData: any = {};
 
   constructor(private service: GeneralService) { }
 
   ngOnInit() {
+    this.getAllData();
+    this.service.langChange.subscribe((a)=> {
+      this.lang = a;
+      this.getAllData();
+    });
+  }
+
+  public getAllData() {
     this.service.getAllTextData().subscribe(data => {
       this.allData = data;
       this.contactsData = this.allData.home.contacts;
