@@ -4,14 +4,14 @@
             <div class="row">
                 <div class="our-name">
                     <img src="assets/images/3.png" />
-                    <h2>{{service.homeProduct.title}}</h2>
+                    <h2>{{homeProductsText.title}}</h2>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="facade-name col-lg-12">
-                    <h4>{{service.borderedTitles[0]}}</h4>
+                    <h4>{{borderedTitles[0]}}</h4>
                     <hr class="hr_border">
                 </div>
             </div>
@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="our-text">
-                    <p>{{service.homeProduct.description}}</p>
+                    <p>{{homeProductsText.description}}</p>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="product clearfix">
-                    <app-item *ngFor="let item of service.products" [curntItem]="item"></app-item>
+                    <app-item *ngFor="let item of homeProducts" [curntItem]="item"></app-item>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="container">
             <div class="row">
                 <div class="facade-name col-lg-12">
-                    <h4>{{service.borderedTitles[1]}}</h4>
+                    <h4>{{borderedTitles[1]}}</h4>
                     <hr class="hr_border">
                 </div>
             </div>
@@ -44,7 +44,7 @@
         <div class="container">
             <div class="row">
                 <div class="our-text">
-                    <p>{{service.homeProduct.description}}</p>
+                    <p>{{homeProductsText.description}}</p>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
         <div class="container">
             <div class="row">
                 <div class="product clearfix">
-                    <app-item *ngFor="let item of service.randomProducts" [curntItem]="item"></app-item>
+                    <app-item *ngFor="let item of randomProducts" [curntItem]="item"></app-item>
                 </div>
             </div>
         </div>

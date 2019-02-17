@@ -8,14 +8,10 @@ import { Subject } from 'rxjs';
 export class GeneralService {
   public lng: string = 'ru';
   public langChange: Subject<string>;
-  public products: Array<any> = [];
   public allProducts: Array<any> = [];
-  public randomProducts: Array<any> = [];
   public itemDetails: any;
   public id: number;
-  public borderedTitles: Array<any> = [];
   public navbarText: any = {};
-  public homeProduct: any = {};
   public wellcomeText: any = {};
   public aboutText: any = {};
   public objectsText: any = {};
@@ -29,7 +25,6 @@ export class GeneralService {
   constructor(private http: HttpClient) { 
     this.langChange = new Subject;
     this.setLang(this.lng);
-    // this.checkLang();
   }
 
   setLang(a){
@@ -46,14 +41,20 @@ export class GeneralService {
     return this.http.get(`http://alikogrd.beget.tech/api/slide/${this.lng}/slides`);
   }
   
+    getHomeProducts(){
+    return this.http.get(`http://alikogrd.beget.tech/api/product/${this.lng}/type-products?limit=5`);
+  }
+
+  getRandomProducts(){
+    return this.http.get(`http://alikogrd.beget.tech/api/product/${this.lng}/products?limit=3&random=1`);
+  }
+
   checkLang(){
     const storedLang = JSON.parse(localStorage.getItem('Language'));
     if (storedLang) {
       this.lng = storedLang;
     }
     this.getText();
-    this.getProducts();
-    this.getRandomProducts();
     this.getItemDetails();
     this.getItemByID(this.id);
     this.getAllProducts();
@@ -79,7 +80,6 @@ export class GeneralService {
     this.http.get('http://alikogrd.beget.tech/api/elements/elements').subscribe(
       (data: any) => {
         this.navbarText = data.navbar_menu.navbar[this.lng];
-        this.homeProduct = data.home.product[this.lng];
         this.wellcomeText = data.object_page.object[this.lng].description;
         this.aboutText = data.home.about[this.lng];
         function removeTags(text) {
@@ -95,33 +95,8 @@ export class GeneralService {
       );
   }
 
-  getProducts(){
-    this.http.get(`http://alikogrd.beget.tech/api/product/${this.lng}/type-products?limit=5`).subscribe(
-      (data: any) => {
-        this.products = [];
-        this.borderedTitles = [];
-        for (let i = 0; i < data.length; i++) {
-          this.products = this.products.concat(data[i].products);
-          this.borderedTitles.push(data[i].title);
-        }
-      },
-      (error) =>{
-        console.log(error);
-      }
-      );
-  }
 
-  getRandomProducts(){
-    this.http.get(`http://alikogrd.beget.tech/api/product/${this.lng}/products?limit=3&random=1`).subscribe(
-      (data: any) => {
-        this.randomProducts = [];
-        this.randomProducts = this.randomProducts.concat(data);
-      },
-      (error) =>{
-        console.log(error);
-      }
-      );
-  }
+
 
   getItemDetails(){
     this.http.get('http://alikogrd.beget.tech/api/elements/elements?sub_alias=single_product_page').subscribe(
