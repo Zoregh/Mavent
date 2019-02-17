@@ -8,14 +8,19 @@ import { GeneralService } from '../../Services/general.service';
 })
 export class ContactsComponent implements OnInit {
   public lang: string = this.service.lng;
-  public allData: any = {};
+  public allData: any = {
+      home: {
+        contacts: {}
+      }
+  };
   public titles: any = {};
+  public contactsData: any = {};
 
   constructor(private service: GeneralService) { 
     this.service.getAllTextData().subscribe(data => {
-      this.allData = data.home.contacts;
-      this.titles = data.home.contacts[this.lang]
-      console.log(this.allData);
+      this.allData = data;
+      this.contactsData = this.allData.home.contacts;
+      this.titles = this.allData.home.contacts[this.lang];
     });
   }
 
