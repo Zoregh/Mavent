@@ -8,15 +8,13 @@ import { GeneralService } from '../../Services/general.service';
 })
 export class ContactsComponent implements OnInit {
   public lang: string = this.service.lng;
-  public allData: any = {
-      home: {
-        contacts: {}
-      }
-  };
+
   public titles: any = {};
   public contactsData: any = {};
 
-  constructor(private service: GeneralService) { 
+  constructor(private service: GeneralService) { }
+
+  ngOnInit() {
     this.service.getAllTextData().subscribe(data => {
       this.allData = data;
       this.contactsData = this.allData.home.contacts;
@@ -24,7 +22,10 @@ export class ContactsComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
+  public allData: any = {
+    home: {
+      contacts: {}
+    }
+};
   
 }

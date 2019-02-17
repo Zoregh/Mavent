@@ -24,7 +24,6 @@ export class GeneralService {
   public singleObjectText: any = {};
   public allObjects: Array<any> = [];
   public randomObjects: Array<any> = [];
-  public feedback: any = {};
 
   public currentProduct: Subject<{}> = new Subject;
 
@@ -94,7 +93,6 @@ export class GeneralService {
         this.aboutText.description = removeTags( this.aboutText.description );
         this.objectsText = data.home.object[this.lng];
         this.singleObjectText = data.single_object_page.object[this.lng];
-        this.feedback = data.home.feedback[this.lng];
       },
       (error) =>{
         console.log(error);
