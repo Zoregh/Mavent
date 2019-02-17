@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GeneralService } from '../../Services/general.service'
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -7,7 +8,8 @@ import { GeneralService } from '../../Services/general.service'
   templateUrl: './slider1.component.html',
   styleUrls: ['./slider1.component.css']
 })
-export class Slider1Component implements OnInit {
+export class Slider1Component implements OnInit, OnDestroy {
+  private langChangesSubscription: Subscription;
   public lang: string = this.service.lng;
   public sliderText: any = {};
 
@@ -15,7 +17,7 @@ export class Slider1Component implements OnInit {
 
   ngOnInit() {
     this.getData();
-    this.service.langChange.subscribe((a)=> {
+    this.langChangesSubscription = this.service.langChange.subscribe((a)=> {
       this.lang = a;
       this.getData();
     });
@@ -39,7 +41,7 @@ export class Slider1Component implements OnInit {
   };
 
   ngOnDestroy() {
-    this.service.langChange.unsubscribe();
+    this.langChangesSubscription.unsubscribe();
   }
 
 }

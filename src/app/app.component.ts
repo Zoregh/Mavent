@@ -7,6 +7,6 @@ import { GeneralService } from './Services/general.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private serve: GeneralService) { }
+  constructor(public serve: GeneralService) { }
   title = 'Mavent';
 }
