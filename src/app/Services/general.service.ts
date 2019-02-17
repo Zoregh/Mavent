@@ -32,6 +32,10 @@ export class GeneralService {
     this.checkLang();
   }
 
+  getAllTextData(){
+    return this.http.get('http://alikogrd.beget.tech/api/elements/elements');
+  }
+
   checkLang(){
     const storedLang = JSON.parse(localStorage.getItem('Language'));
     if (storedLang) {

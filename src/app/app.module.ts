@@ -20,6 +20,7 @@ import { ObjectsInfoComponent } from './Components/objects-info/objects-info.com
 import { Slider2Component } from './Components/slider2/slider2.component';
 import { ObjectDetailsComponent } from './Components/object-details/object-details.component';
 import { FeedbackComponent } from './Components/feedback/feedback.component';
+import { ContactsComponent } from './Components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FeedbackComponent } from './Components/feedback/feedback.component';
     ObjectsInfoComponent,
     Slider2Component,
     ObjectDetailsComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
